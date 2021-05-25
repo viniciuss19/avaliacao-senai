@@ -24,14 +24,129 @@ namespace Avaliação
             this.Hide();
         }
 
-        public void InserirCliente()
-        {
-            
-        }
+
 
         private void label3_Click(object sender, EventArgs e)
         {
-          
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            PesquisarNomeCliente();
+        }
+
+        private void MenuPrincipal_Load(object sender, EventArgs e)
+        {
+            AtualizarDGVClientes();
+        }
+        public void AtualizarDGVClientes()
+        {
+            SqlConnection conexao = new SqlConnection();
+            conexao.ConnectionString = @"Data Source=DESKTOP-SO3COJV;Initial Catalog=provasenai;Integrated Security=True";
+            SqlCommand sql = new SqlCommand();
+            sql.Connection = conexao;
+            sql.CommandText = $"Select * FROM Clientes";
+            try
+            {
+                conexao.Open();
+                int i = sql.ExecuteNonQuery();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.ToString());
+            }
+            finally
+            {
+                SqlDataAdapter adaptador = new SqlDataAdapter(sql.CommandText, conexao);
+                DataTable tabela = new DataTable();
+                adaptador.Fill(tabela);
+                dgvClientes.DataSource = tabela;
+                dgvClientes.ClearSelection();
+                conexao.Close();
+            }
+        }
+        public void PesquisarNomeCliente()
+        {
+            SqlConnection conexao = new SqlConnection();
+            conexao.ConnectionString = @"Data Source=DESKTOP-SO3COJV;Initial Catalog=provasenai;Integrated Security=True";
+            SqlCommand sql = new SqlCommand();
+            sql.Connection = conexao;
+            sql.CommandText = $"SELECT * FROM Clientes WHERE Nome LIKE   '%{tbNomePesquisar.Text}%'";
+
+            try
+            {
+                conexao.Open();
+                int i = sql.ExecuteNonQuery();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.ToString());
+            }
+            finally
+            {
+                SqlDataAdapter adaptador = new SqlDataAdapter(sql.CommandText, conexao);
+                DataTable tabela = new DataTable();
+                adaptador.Fill(tabela);
+                dgvClientes.DataSource = tabela;
+                dgvClientes.ClearSelection();
+                conexao.Close();
+            }
+        }
+        public void PesquisarCPFCliente()
+        {
+            SqlConnection conexao = new SqlConnection();
+            conexao.ConnectionString = @"Data Source=DESKTOP-SO3COJV;Initial Catalog=provasenai;Integrated Security=True";
+            SqlCommand sql = new SqlCommand();
+            sql.Connection = conexao;
+            sql.CommandText = $"SELECT * FROM Clientes WHERE Nome LIKE   '%{tbCPFPesquisar.Text}%'";
+
+            try
+            {
+                conexao.Open();
+                int i = sql.ExecuteNonQuery();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.ToString());
+            }
+            finally
+            {
+                SqlDataAdapter adaptador = new SqlDataAdapter(sql.CommandText, conexao);
+                DataTable tabela = new DataTable();
+                adaptador.Fill(tabela);
+                dgvClientes.DataSource = tabela;
+                dgvClientes.ClearSelection();
+                conexao.Close();
+            }
+        }
+        public void PesquisarTelefoneCliente()
+        {
+            SqlConnection conexao = new SqlConnection();
+            conexao.ConnectionString = @"Data Source=DESKTOP-SO3COJV;Initial Catalog=provasenai;Integrated Security=True";
+            SqlCommand sql = new SqlCommand();
+            sql.Connection = conexao;
+            sql.CommandText = $"SELECT * FROM Clientes WHERE Nome LIKE   '%{tbTelefonePesquisar.Text}%'";
+
+            try
+            {
+                conexao.Open();
+                int i = sql.ExecuteNonQuery();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.ToString());
+            }
+            finally
+            {
+                SqlDataAdapter adaptador = new SqlDataAdapter(sql.CommandText, conexao);
+                DataTable tabela = new DataTable();
+                adaptador.Fill(tabela);
+                dgvClientes.DataSource = tabela;
+                dgvClientes.ClearSelection();
+                conexao.Close();
+            }
+
         }
     }
 }
