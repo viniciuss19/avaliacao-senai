@@ -89,5 +89,25 @@ namespace Avaliação.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2021_05_24_at_21_39_49 {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2021-05-24 at 21.39.49", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2021_05_24_at_21_47_00__1___1_ {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2021-05-24 at 21.47.00 (1) (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

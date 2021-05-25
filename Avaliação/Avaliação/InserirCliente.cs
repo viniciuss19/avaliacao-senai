@@ -30,36 +30,42 @@ namespace Avaliação
 
         private void button1_Click(object sender, EventArgs e)
         {
-            lblfalachefe.Text = "ROUF";
+           
             if (txtNome.Text == "")
             {
                 MessageBox.Show("Preencha os campos restantes");
                 txtNome.Focus();
+                lblfalachefe.Text = "ROUF PREENCHA OS CAMPOS";
             }
             else if (txtCPF.Text == "")
             {
                 MessageBox.Show("Preencha os campos restantes");
                 txtCPF.Focus();
+                lblfalachefe.Text = "ROUF PREENCHA OS CAMPOS";
             }
             else if (txtTelefone.Text == "")
             {
                 MessageBox.Show("Preencha os campos restantes");
                 txtTelefone.Focus();
+                lblfalachefe.Text = "ROUF PREENCHA OS CAMPOS";
             }
             else if (txtCEP.Text == "")
             {
                 MessageBox.Show("Preencha os campos restantes");
                 txtCEP.Focus();
+                lblfalachefe.Text = "ROUF PREENCHA OS CAMPOS";
             }
             else if (txtRua.Text == "")
             {
                 MessageBox.Show("Preencha os campos restantes");
                 txtRua.Focus();
+                lblfalachefe.Text = "ROUF PREENCHA OS CAMPOS";
             }
             else if (txtCidade.Text == "")
             {
                 MessageBox.Show("Preencha os campos restantes");
                 txtCidade.Focus();
+                lblfalachefe.Text = "ROUF PREENCHA OS CAMPOS";
             }
             else if (txtEstado.Text == "")
             {
@@ -70,8 +76,13 @@ namespace Avaliação
             {
                 MessageBox.Show("Preencha os campos restantes");
                 txtNúmero.Focus();
+                lblfalachefe.Text = "ROUF PREENCHA OS CAMPOS";
             }
-           
+           else
+            {
+                lblfalachefe.Text = "ROOOOOOOOOOOOOOUUUUFFFFFF";
+                AdicionarCliente();
+            }
 
             
 

@@ -101,5 +101,11 @@
   <ItemGroup>
     <None Include="Resources\img_como_saber_a_idade_de_um_cachorro_21702_paso_0_600.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2021-05-24 at 21.47.00 %281%29 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2021-05-24 at 21.39.49.jpeg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
