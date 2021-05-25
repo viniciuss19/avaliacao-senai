@@ -39,16 +39,18 @@ namespace Avaliação
             this.tbCPFPesquisar = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tbTelefonePesquisar = new System.Windows.Forms.TextBox();
+            this.lbltabela = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.pbPesquisarTelefone = new System.Windows.Forms.PictureBox();
+            this.pbPesquisarCPF = new System.Windows.Forms.PictureBox();
             this.pbPesquisarNome = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pbPesquisarCPF = new System.Windows.Forms.PictureBox();
-            this.pbPesquisarTelefone = new System.Windows.Forms.PictureBox();
-            this.lbltabela = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPesquisarTelefone)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPesquisarCPF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPesquisarNome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPesquisarCPF)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPesquisarTelefone)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -57,7 +59,7 @@ namespace Avaliação
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(36, 223);
+            this.button1.Location = new System.Drawing.Point(36, 280);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(133, 43);
             this.button1.TabIndex = 0;
@@ -70,11 +72,12 @@ namespace Avaliação
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(383, 57);
+            this.label1.Location = new System.Drawing.Point(362, 59);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(243, 29);
             this.label1.TabIndex = 2;
             this.label1.Text = "Rouf Rouf Telemarketing";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -141,6 +144,63 @@ namespace Avaliação
             this.tbTelefonePesquisar.Size = new System.Drawing.Size(100, 20);
             this.tbTelefonePesquisar.TabIndex = 10;
             // 
+            // lbltabela
+            // 
+            this.lbltabela.AutoSize = true;
+            this.lbltabela.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltabela.Location = new System.Drawing.Point(604, 137);
+            this.lbltabela.Name = "lbltabela";
+            this.lbltabela.Size = new System.Drawing.Size(125, 16);
+            this.lbltabela.TabIndex = 14;
+            this.lbltabela.Text = "Tabela de Clientes:";
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(498, 125);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 15;
+            this.button2.Text = "Atualizar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Gainsboro;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.Black;
+            this.button3.Location = new System.Drawing.Point(36, 339);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(133, 43);
+            this.button3.TabIndex = 16;
+            this.button3.Text = "Gerenciar Clientes";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // pbPesquisarTelefone
+            // 
+            this.pbPesquisarTelefone.Image = global::Avaliação.Properties.Resources.download1;
+            this.pbPesquisarTelefone.Location = new System.Drawing.Point(468, 234);
+            this.pbPesquisarTelefone.Name = "pbPesquisarTelefone";
+            this.pbPesquisarTelefone.Size = new System.Drawing.Size(65, 20);
+            this.pbPesquisarTelefone.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbPesquisarTelefone.TabIndex = 13;
+            this.pbPesquisarTelefone.TabStop = false;
+            this.pbPesquisarTelefone.Click += new System.EventHandler(this.pbPesquisarTelefone_Click);
+            // 
+            // pbPesquisarCPF
+            // 
+            this.pbPesquisarCPF.Image = global::Avaliação.Properties.Resources.download1;
+            this.pbPesquisarCPF.Location = new System.Drawing.Point(468, 192);
+            this.pbPesquisarCPF.Name = "pbPesquisarCPF";
+            this.pbPesquisarCPF.Size = new System.Drawing.Size(65, 20);
+            this.pbPesquisarCPF.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbPesquisarCPF.TabIndex = 12;
+            this.pbPesquisarCPF.TabStop = false;
+            this.pbPesquisarCPF.Click += new System.EventHandler(this.pbPesquisarCPF_Click);
+            // 
             // pbPesquisarNome
             // 
             this.pbPesquisarNome.Image = global::Avaliação.Properties.Resources.download1;
@@ -155,41 +215,12 @@ namespace Avaliação
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Avaliação.Properties.Resources.WhatsApp_Image_2021_05_24_at_21_39_49;
-            this.pictureBox1.Location = new System.Drawing.Point(36, 1);
+            this.pictureBox1.Location = new System.Drawing.Point(36, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(300, 201);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            // 
-            // pbPesquisarCPF
-            // 
-            this.pbPesquisarCPF.Image = global::Avaliação.Properties.Resources.download1;
-            this.pbPesquisarCPF.Location = new System.Drawing.Point(468, 192);
-            this.pbPesquisarCPF.Name = "pbPesquisarCPF";
-            this.pbPesquisarCPF.Size = new System.Drawing.Size(65, 20);
-            this.pbPesquisarCPF.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbPesquisarCPF.TabIndex = 12;
-            this.pbPesquisarCPF.TabStop = false;
-            // 
-            // pbPesquisarTelefone
-            // 
-            this.pbPesquisarTelefone.Image = global::Avaliação.Properties.Resources.download1;
-            this.pbPesquisarTelefone.Location = new System.Drawing.Point(468, 234);
-            this.pbPesquisarTelefone.Name = "pbPesquisarTelefone";
-            this.pbPesquisarTelefone.Size = new System.Drawing.Size(65, 20);
-            this.pbPesquisarTelefone.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbPesquisarTelefone.TabIndex = 13;
-            this.pbPesquisarTelefone.TabStop = false;
-            // 
-            // lbltabela
-            // 
-            this.lbltabela.AutoSize = true;
-            this.lbltabela.Location = new System.Drawing.Point(612, 123);
-            this.lbltabela.Name = "lbltabela";
-            this.lbltabela.Size = new System.Drawing.Size(98, 13);
-            this.lbltabela.TabIndex = 14;
-            this.lbltabela.Text = "Tabela de Clientes:";
             // 
             // MenuPrincipal
             // 
@@ -197,6 +228,8 @@ namespace Avaliação
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(791, 469);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.lbltabela);
             this.Controls.Add(this.pbPesquisarTelefone);
             this.Controls.Add(this.pbPesquisarCPF);
@@ -217,10 +250,10 @@ namespace Avaliação
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.MenuPrincipal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPesquisarTelefone)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPesquisarCPF)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPesquisarNome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPesquisarCPF)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPesquisarTelefone)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -243,6 +276,8 @@ namespace Avaliação
         private System.Windows.Forms.PictureBox pbPesquisarCPF;
         private System.Windows.Forms.PictureBox pbPesquisarTelefone;
         private System.Windows.Forms.Label lbltabela;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }
 

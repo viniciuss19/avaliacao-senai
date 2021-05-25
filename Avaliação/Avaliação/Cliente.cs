@@ -85,5 +85,11 @@ namespace Avaliação
             Número = número;
             Complemento = complemento;
         }
+        public Cliente(string nome, string telefone, string rua)
+        {
+            Nome = nome;
+            Telefone = telefone;
+            Rua = rua;
+        }
     }
 }

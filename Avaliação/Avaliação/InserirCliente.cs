@@ -106,7 +106,7 @@ namespace Avaliação
             try
             {
                 conexao.Open();
-                sql.CommandText = $"INSERT INTO Clientes(Nome,CPF,Telefone,CEP,Estado,Cidade,Rua,Número) VALUES (@nome,@cpf,@telefone,@cep,@estado,@cidade,@rua,@número)";
+                sql.CommandText = $"INSERT INTO Clientes(Nome,CPF,Telefone,CEP,Estado,Cidade,Rua,Número,Complemento) VALUES (@nome,@cpf,@telefone,@cep,@estado,@cidade,@rua,@número,@complemento)";
                 sql.Parameters.AddWithValue("@nome", txtNome.Text);
                 sql.Parameters.AddWithValue("@cpf", txtCPF.Text);
                 sql.Parameters.AddWithValue("@telefone", txtTelefone.Text);
@@ -115,6 +115,7 @@ namespace Avaliação
                 sql.Parameters.AddWithValue("@cidade", txtCidade.Text);
                 sql.Parameters.AddWithValue("@rua", txtRua.Text);
                 sql.Parameters.AddWithValue("@número", txtNúmero.Text);
+                sql.Parameters.AddWithValue("@complemento", txtComplemento.Text);
 
                 int i = sql.ExecuteNonQuery();
             }

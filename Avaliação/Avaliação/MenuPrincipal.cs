@@ -34,6 +34,7 @@ namespace Avaliação
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             PesquisarNomeCliente();
+            lbltabela.Text = "Busca por nome...";
         }
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
@@ -99,7 +100,7 @@ namespace Avaliação
             conexao.ConnectionString = @"Data Source=DESKTOP-SO3COJV;Initial Catalog=provasenai;Integrated Security=True";
             SqlCommand sql = new SqlCommand();
             sql.Connection = conexao;
-            sql.CommandText = $"SELECT * FROM Clientes WHERE Nome LIKE   '%{tbCPFPesquisar.Text}%'";
+            sql.CommandText = $"SELECT * FROM Clientes WHERE CPF LIKE  '%{tbCPFPesquisar.Text}%'";
 
             try
             {
@@ -126,7 +127,7 @@ namespace Avaliação
             conexao.ConnectionString = @"Data Source=DESKTOP-SO3COJV;Initial Catalog=provasenai;Integrated Security=True";
             SqlCommand sql = new SqlCommand();
             sql.Connection = conexao;
-            sql.CommandText = $"SELECT * FROM Clientes WHERE Nome LIKE   '%{tbTelefonePesquisar.Text}%'";
+            sql.CommandText = $"SELECT * FROM Clientes WHERE Telefone LIKE '{tbTelefonePesquisar.Text}'";
 
             try
             {
@@ -147,6 +148,35 @@ namespace Avaliação
                 conexao.Close();
             }
 
+        }
+
+        private void pbPesquisarCPF_Click(object sender, EventArgs e)
+        {
+            PesquisarCPFCliente();
+            lbltabela.Text = "Busca por CPF";
+        }
+
+        private void pbPesquisarTelefone_Click(object sender, EventArgs e)
+        {
+            PesquisarTelefoneCliente();
+            lbltabela.Text = "Busca por telefone";
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AtualizarDGVClientes();
+            lbltabela.Text = "Tabela de Clientes...";
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            new GerenciarCliente().Show();
+            this.Hide();
         }
     }
 }
