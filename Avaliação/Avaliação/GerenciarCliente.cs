@@ -131,5 +131,11 @@ namespace Avaliação
         {
 
         }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+            new MenuPrincipal().Show();
+            this.Hide();
+        }
     }
 }

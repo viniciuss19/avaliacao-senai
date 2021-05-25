@@ -127,11 +127,12 @@ namespace Avaliação
             conexao.ConnectionString = @"Data Source=DESKTOP-SO3COJV;Initial Catalog=provasenai;Integrated Security=True";
             SqlCommand sql = new SqlCommand();
             sql.Connection = conexao;
-            sql.CommandText = $"SELECT * FROM Clientes WHERE Telefone LIKE '{tbTelefonePesquisar.Text}'";
+           
 
             try
             {
                 conexao.Open();
+                sql.CommandText = $"SELECT * FROM Linhas WHERE IDCliente = @idcliente";
                 int i = sql.ExecuteNonQuery();
             }
             catch (Exception exception)
@@ -143,8 +144,8 @@ namespace Avaliação
                 SqlDataAdapter adaptador = new SqlDataAdapter(sql.CommandText, conexao);
                 DataTable tabela = new DataTable();
                 adaptador.Fill(tabela);
-                dgvClientes.DataSource = tabela;
-                dgvClientes.ClearSelection();
+                dgvLinhas.DataSource = tabela;
+                dgvLinhas.ClearSelection();
                 conexao.Close();
             }
 
@@ -177,6 +178,77 @@ namespace Avaliação
         {
             new GerenciarCliente().Show();
             this.Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            
+        }
+       
+        public void AtualizarLinha()
+        {
+            SqlConnection conexao = new SqlConnection();
+            conexao.ConnectionString = @"Data Source=DESKTOP-SO3COJV;Initial Catalog=provasenai;Integrated Security=True";
+            SqlCommand sql = new SqlCommand();
+            sql.Connection = conexao;
+
+            try
+            {
+                conexao.Open();
+                sql.CommandText = $"SELECT * FROM Linhas";
+                int i = sql.ExecuteNonQuery();
+            }
+            catch(Exception exception)
+            {
+                MessageBox.Show(exception.ToString());
+            }
+            finally
+            {
+                SqlDataAdapter adaptador = new SqlDataAdapter(sql.CommandText, conexao);
+                DataTable tabela = new DataTable();
+                adaptador.Fill(tabela);
+                dgvLinhas.DataSource = tabela;
+                dgvLinhas.ClearSelection();
+                conexao.Close();
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            AtualizarLinha();
+            SqlConnection conexao = new SqlConnection();
+            conexao.ConnectionString = @"Data Source=DESKTOP-SO3COJV;Initial Catalog=provasenai;Integrated Security=True";
+            SqlCommand sql = new SqlCommand();
+            sql.Connection = conexao;
+
+            DataGridViewRow row = this.dgvLinhas.Rows[e.RowIndex];
+
+            sql.CommandText = $"SELECT * FROM Linhas WHERE '{row.Cells["ID"].Value}' LIKE IDCliente";
+            try
+            {
+                conexao.Open();
+                int i = sql.ExecuteNonQuery();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.ToString());
+            }
+            finally
+            {
+                SqlDataAdapter adaptador = new SqlDataAdapter(sql.CommandText, conexao);
+                DataTable tabela = new DataTable();
+                adaptador.Fill(tabela);
+                dgvLinhas.DataSource = tabela;
+                dgvLinhas.ClearSelection();
+                conexao.Close();
+            }
+
+
         }
     }
 }
