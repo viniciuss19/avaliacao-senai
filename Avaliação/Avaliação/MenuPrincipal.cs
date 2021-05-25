@@ -228,7 +228,7 @@ namespace Avaliação
 
             DataGridViewRow row = this.dgvLinhas.Rows[e.RowIndex];
 
-            sql.CommandText = $"SELECT * FROM Linhas WHERE '{row.Cells["ID"].Value}' LIKE IDCliente";
+            sql.CommandText = $"SELECT * FROM Linhas WHERE '{row.Cells["ID"].Value}' LIKE IDCliente AND Ativo = 'Sim'";
             try
             {
                 conexao.Open();
