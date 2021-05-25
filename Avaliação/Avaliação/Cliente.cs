@@ -72,9 +72,9 @@ namespace Avaliação
         }
 
 
-        public Cliente(int id,string nome, int cpf, string telefone, int cep, string estado, string cidade, string rua, string número, string complemento)
+        public Cliente(string nome, int cpf, string telefone, int cep, string estado, string cidade, string rua, string número, string complemento)
         {
-            ID = id;
+      
             Nome = nome;
             CPF = cpf;
           Telefone = telefone;

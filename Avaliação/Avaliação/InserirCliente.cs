@@ -30,7 +30,53 @@ namespace Avaliação
 
         private void button1_Click(object sender, EventArgs e)
         {
-            lblfalachefe.Text = "-- MAIS UM PRO ESQUEMA DE PIRÂMIDE ROUF ";
+            lblfalachefe.Text = "ROUF";
+            if (txtNome.Text == "")
+            {
+                MessageBox.Show("Preencha os campos restantes");
+                txtNome.Focus();
+            }
+            else if (txtCPF.Text == "")
+            {
+                MessageBox.Show("Preencha os campos restantes");
+                txtCPF.Focus();
+            }
+            else if (txtTelefone.Text == "")
+            {
+                MessageBox.Show("Preencha os campos restantes");
+                txtTelefone.Focus();
+            }
+            else if (txtCEP.Text == "")
+            {
+                MessageBox.Show("Preencha os campos restantes");
+                txtCEP.Focus();
+            }
+            else if (txtRua.Text == "")
+            {
+                MessageBox.Show("Preencha os campos restantes");
+                txtRua.Focus();
+            }
+            else if (txtCidade.Text == "")
+            {
+                MessageBox.Show("Preencha os campos restantes");
+                txtCidade.Focus();
+            }
+            else if (txtEstado.Text == "")
+            {
+                MessageBox.Show("Preencha os campos restantes");
+                txtEstado.Focus();
+            }
+            else if (txtNúmero.Text == "")
+            {
+                MessageBox.Show("Preencha os campos restantes");
+                txtNúmero.Focus();
+            }
+           
+
+            
+
+           
+          
         }
 
         private void lblfalachefe_Click(object sender, EventArgs e)
@@ -44,11 +90,21 @@ namespace Avaliação
             SqlCommand sql = new SqlCommand();
             sql.Connection = conexao;
 
-            sql.CommandText = $"INSERT INTO Clientes(Nome,CPF,Telefone,CEP,Estado,Cidade,Rua,Número) VALUES (@nome,@cpf,@telefone,@cep,@estado,@cidade,@rua,@número)";
+           
 
             try
             {
                 conexao.Open();
+                sql.CommandText = $"INSERT INTO Clientes(Nome,CPF,Telefone,CEP,Estado,Cidade,Rua,Número) VALUES (@nome,@cpf,@telefone,@cep,@estado,@cidade,@rua,@número)";
+                sql.Parameters.AddWithValue("@nome", txtNome.Text);
+                sql.Parameters.AddWithValue("@cpf", txtCPF.Text);
+                sql.Parameters.AddWithValue("@telefone", txtTelefone.Text);
+                sql.Parameters.AddWithValue("@cep", txtCEP.Text);
+                sql.Parameters.AddWithValue("@estado", txtEstado.Text);
+                sql.Parameters.AddWithValue("@cidade", txtCidade.Text);
+                sql.Parameters.AddWithValue("@rua", txtRua.Text);
+                sql.Parameters.AddWithValue("@número", txtNúmero.Text);
+
                 int i = sql.ExecuteNonQuery();
             }
             catch(Exception exception)
@@ -69,6 +125,12 @@ namespace Avaliação
             txtNúmero.Clear();
             txtTelefone.Clear();
             txtComplemento.Clear();
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+            new MenuPrincipal().Show();
+            this.Hide();
         }
     }
 }

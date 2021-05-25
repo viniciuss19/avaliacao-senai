@@ -11,9 +11,9 @@ using System.Data.SqlClient;
 
 namespace Avaliação
 {
-    public partial class Form1 : Form
+    public partial class MenuPrincipal : Form
     {
-        public Form1()
+        public MenuPrincipal()
         {
             InitializeComponent();
         }
@@ -27,6 +27,11 @@ namespace Avaliação
         public void InserirCliente()
         {
             
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+          
         }
     }
 }
