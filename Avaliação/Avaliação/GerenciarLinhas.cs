@@ -20,7 +20,7 @@ namespace Avaliação
 
         private void GerenciarLinhas_Load(object sender, EventArgs e)
         {
-
+            AtualizarLinhas();
         }
         public void AtualizarLinhas()
         
@@ -50,6 +50,90 @@ namespace Avaliação
                     conexao.Close();
                 }
             
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(tbIDLinha.Text);
+            AtivarLinha(id);
+        }
+        public void AtivarLinha(int id)
+        {
+            SqlConnection conexao = new SqlConnection();
+            conexao.ConnectionString = @"Data Source=DESKTOP-SO3COJV;Initial Catalog=provasenai;Integrated Security=True";
+            SqlCommand sql = new SqlCommand();
+            sql.Connection = conexao;
+            try
+            {
+                conexao.Open();
+                sql.CommandText = $"UPDATE Linhas SET Ativo = @ativo WHERE ID = @id";
+                sql.Parameters.AddWithValue("@ativo", "Sim");
+                sql.Parameters.AddWithValue("@id", tbIDLinha.Text);
+                int i = sql.ExecuteNonQuery();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.ToString());
+            }
+            finally
+            {
+                MessageBox.Show($"A Linha do id {tbIDLinha.Text} foi editada com sucesso ROUF ROOOUUFF");
+                AtualizarLinhas();
+                tbIDLinha.Clear();
+                tbAtivoLinha.Clear();
+                tbNumeroLinha.Clear();
+                conexao.Close();
+            }
+        }
+        public void DesativarLinha(int id)
+        {
+            SqlConnection conexao = new SqlConnection();
+            conexao.ConnectionString = @"Data Source=DESKTOP-SO3COJV;Initial Catalog=provasenai;Integrated Security=True";
+            SqlCommand sql = new SqlCommand();
+            sql.Connection = conexao;
+            try
+            {
+                conexao.Open();
+                sql.CommandText =  $"UPDATE Linhas SET Ativo = @ativo WHERE ID = @id";
+                sql.Parameters.AddWithValue("@ativo", "Não");
+                sql.Parameters.AddWithValue("@id", tbIDLinha.Text);
+
+                int i = sql.ExecuteNonQuery();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.ToString());
+            }
+            finally
+            {
+               
+                MessageBox.Show($"A Linha do id {tbIDLinha.Text} foi editada com sucesso ROUF ROOOUUFF");
+                AtualizarLinhas();
+                tbIDLinha.Clear();
+                tbAtivoLinha.Clear();
+                tbNumeroLinha.Clear();
+                conexao.Close();
+            }
+        }
+
+        private void dgvLinhasGerenciar_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex > 0)
+            {
+                DataGridViewRow row = this.dgvLinhasGerenciar.Rows[e.RowIndex];
+
+                tbAtivoLinha.Text = row.Cells["Ativo"].Value.ToString();
+                tbIDLinha.Text = row.Cells["ID"].Value.ToString();
+                tbNumeroLinha.Text = row.Cells["Número"].Value.ToString();
+               
+
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(tbIDLinha.Text);
+            DesativarLinha(id);
         }
     }
 }
