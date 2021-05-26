@@ -22,6 +22,34 @@ namespace Avaliação
         {
             AtualizarClientes();
             AtualizarPlanos();
+            AtualizarLinhas();
+           
+        }
+        public void AtualizarLinhas()
+        {
+            SqlConnection conexao = new SqlConnection();
+            conexao.ConnectionString = @"Data Source=DESKTOP-SO3COJV;Initial Catalog=provasenai;Integrated Security=True";
+            SqlCommand sql = new SqlCommand();
+            sql.Connection = conexao;
+            sql.CommandText = $"Select * FROM Linhas";
+            try
+            {
+                conexao.Open();
+                int i = sql.ExecuteNonQuery();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.ToString());
+            }
+            finally
+            {
+                SqlDataAdapter adaptador = new SqlDataAdapter(sql.CommandText, conexao);
+                DataTable tabela = new DataTable();
+                adaptador.Fill(tabela);
+                dgvLinhas.DataSource = tabela;
+                dgvLinhas.ClearSelection();
+                conexao.Close();
+            }
         }
         public void AtualizarClientes()
         {
@@ -116,9 +144,12 @@ namespace Avaliação
             try
             {
                 conexao.Open();
-               sql.CommandText = $"UPDATE Linhas SET IDPlano = @idplano WHERE IDCliente = @idcliente";
+                sql.CommandText = $"UPDATE Linhas SET IDPlano = @idplano WHERE ID = @idlinhas AND IDCliente = @idcliente";
+               
                 sql.Parameters.AddWithValue("@idplano", tbIDPlano.Text);
+                sql.Parameters.AddWithValue("@idlinhas", tbIDLinhas.Text);
                 sql.Parameters.AddWithValue("@idcliente", tbIDCliente.Text);
+
                 int i = sql.ExecuteNonQuery();
             }
             catch(Exception e)
@@ -143,6 +174,15 @@ namespace Avaliação
         {
             new MenuPrincipal().Show();
             this.Hide();
+        }
+
+        private void dgvLinhas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex > 0)
+            {
+                DataGridViewRow row = this.dgvLinhas.Rows[e.RowIndex];
+                tbIDLinhas.Text = row.Cells["ID"].Value.ToString();
+            }
         }
     }
 }

@@ -51,6 +51,8 @@ namespace Avaliação
             this.pbPesquisarCPF = new System.Windows.Forms.PictureBox();
             this.pbPesquisarNome = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tbIDcliente = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLinhas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPesquisarTelefone)).BeginInit();
@@ -164,7 +166,7 @@ namespace Avaliação
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(458, 106);
+            this.button2.Location = new System.Drawing.Point(528, 78);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 15;
@@ -290,12 +292,30 @@ namespace Avaliação
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // tbIDcliente
+            // 
+            this.tbIDcliente.Location = new System.Drawing.Point(500, 113);
+            this.tbIDcliente.Name = "tbIDcliente";
+            this.tbIDcliente.Size = new System.Drawing.Size(33, 20);
+            this.tbIDcliente.TabIndex = 22;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(473, 115);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(21, 13);
+            this.label7.TabIndex = 23;
+            this.label7.Text = "ID:";
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(791, 469);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.tbIDcliente);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -357,6 +377,8 @@ namespace Avaliação
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.TextBox tbIDcliente;
+        private System.Windows.Forms.Label label7;
     }
 }
 

@@ -54,16 +54,21 @@ namespace Avaliação
             this.label12 = new System.Windows.Forms.Label();
             this.tbIDPlano = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.dgvLinhas = new System.Windows.Forms.DataGridView();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.tbIDLinhas = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlanos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLinhas)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(511, 321);
+            this.label1.Location = new System.Drawing.Point(511, 340);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(162, 24);
             this.label1.TabIndex = 0;
@@ -72,7 +77,7 @@ namespace Avaliação
             // dgvPlanos
             // 
             this.dgvPlanos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPlanos.Location = new System.Drawing.Point(418, 348);
+            this.dgvPlanos.Location = new System.Drawing.Point(418, 369);
             this.dgvPlanos.Name = "dgvPlanos";
             this.dgvPlanos.Size = new System.Drawing.Size(352, 100);
             this.dgvPlanos.TabIndex = 1;
@@ -80,7 +85,7 @@ namespace Avaliação
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 276);
+            this.button1.Location = new System.Drawing.Point(12, 388);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(180, 62);
             this.button1.TabIndex = 2;
@@ -91,9 +96,9 @@ namespace Avaliação
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Avaliação.Properties.Resources._3_dicas_para_estimular_a_inteligencia_do_seu_cachorro;
-            this.pictureBox1.Location = new System.Drawing.Point(102, -6);
+            this.pictureBox1.Location = new System.Drawing.Point(3, -2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(282, 163);
+            this.pictureBox1.Size = new System.Drawing.Size(212, 163);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
@@ -102,7 +107,7 @@ namespace Avaliação
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(390, 38);
+            this.label2.Location = new System.Drawing.Point(-2, 164);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(123, 25);
             this.label2.TabIndex = 4;
@@ -112,7 +117,7 @@ namespace Avaliação
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(392, 63);
+            this.label3.Location = new System.Drawing.Point(12, 191);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(176, 18);
             this.label3.TabIndex = 5;
@@ -120,7 +125,7 @@ namespace Avaliação
             // 
             // tbNomeCliente
             // 
-            this.tbNomeCliente.Location = new System.Drawing.Point(284, 192);
+            this.tbNomeCliente.Location = new System.Drawing.Point(284, 222);
             this.tbNomeCliente.Name = "tbNomeCliente";
             this.tbNomeCliente.Size = new System.Drawing.Size(100, 20);
             this.tbNomeCliente.TabIndex = 6;
@@ -129,7 +134,7 @@ namespace Avaliação
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(501, 133);
+            this.label4.Location = new System.Drawing.Point(501, 185);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(172, 24);
             this.label4.TabIndex = 7;
@@ -138,7 +143,7 @@ namespace Avaliação
             // dgvClientes
             // 
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientes.Location = new System.Drawing.Point(418, 178);
+            this.dgvClientes.Location = new System.Drawing.Point(418, 217);
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.Size = new System.Drawing.Size(352, 120);
             this.dgvClientes.TabIndex = 8;
@@ -146,7 +151,7 @@ namespace Avaliação
             // 
             // tbTelefone
             // 
-            this.tbTelefone.Location = new System.Drawing.Point(284, 234);
+            this.tbTelefone.Location = new System.Drawing.Point(284, 252);
             this.tbTelefone.Name = "tbTelefone";
             this.tbTelefone.Size = new System.Drawing.Size(100, 20);
             this.tbTelefone.TabIndex = 9;
@@ -161,7 +166,7 @@ namespace Avaliação
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(316, 164);
+            this.label5.Location = new System.Drawing.Point(298, 176);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(56, 13);
             this.label5.TabIndex = 11;
@@ -169,7 +174,7 @@ namespace Avaliação
             // 
             // tbIDCliente
             // 
-            this.tbIDCliente.Location = new System.Drawing.Point(378, 161);
+            this.tbIDCliente.Location = new System.Drawing.Point(360, 176);
             this.tbIDCliente.Name = "tbIDCliente";
             this.tbIDCliente.Size = new System.Drawing.Size(34, 20);
             this.tbIDCliente.TabIndex = 12;
@@ -177,7 +182,7 @@ namespace Avaliação
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(205, 195);
+            this.label6.Location = new System.Drawing.Point(205, 229);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(73, 13);
             this.label6.TabIndex = 13;
@@ -186,7 +191,7 @@ namespace Avaliação
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(226, 237);
+            this.label7.Location = new System.Drawing.Point(226, 252);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(52, 13);
             this.label7.TabIndex = 14;
@@ -204,7 +209,7 @@ namespace Avaliação
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(236, 351);
+            this.label9.Location = new System.Drawing.Point(236, 398);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(68, 13);
             this.label9.TabIndex = 16;
@@ -212,7 +217,7 @@ namespace Avaliação
             // 
             // tbNomePlano
             // 
-            this.tbNomePlano.Location = new System.Drawing.Point(301, 348);
+            this.tbNomePlano.Location = new System.Drawing.Point(301, 395);
             this.tbNomePlano.Name = "tbNomePlano";
             this.tbNomePlano.Size = new System.Drawing.Size(100, 20);
             this.tbNomePlano.TabIndex = 17;
@@ -220,7 +225,7 @@ namespace Avaliação
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(236, 381);
+            this.label10.Location = new System.Drawing.Point(248, 424);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(70, 13);
             this.label10.TabIndex = 18;
@@ -228,7 +233,7 @@ namespace Avaliação
             // 
             // tbMensalidade
             // 
-            this.tbMensalidade.Location = new System.Drawing.Point(312, 378);
+            this.tbMensalidade.Location = new System.Drawing.Point(312, 421);
             this.tbMensalidade.Name = "tbMensalidade";
             this.tbMensalidade.Size = new System.Drawing.Size(89, 20);
             this.tbMensalidade.TabIndex = 19;
@@ -236,7 +241,7 @@ namespace Avaliação
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(248, 410);
+            this.label11.Location = new System.Drawing.Point(253, 449);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(51, 13);
             this.label11.TabIndex = 20;
@@ -244,7 +249,7 @@ namespace Avaliação
             // 
             // tbFranquia
             // 
-            this.tbFranquia.Location = new System.Drawing.Point(305, 407);
+            this.tbFranquia.Location = new System.Drawing.Point(312, 449);
             this.tbFranquia.Name = "tbFranquia";
             this.tbFranquia.Size = new System.Drawing.Size(89, 20);
             this.tbFranquia.TabIndex = 21;
@@ -252,7 +257,7 @@ namespace Avaliação
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(350, 325);
+            this.label12.Location = new System.Drawing.Point(321, 351);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(51, 13);
             this.label12.TabIndex = 22;
@@ -260,7 +265,7 @@ namespace Avaliação
             // 
             // tbIDPlano
             // 
-            this.tbIDPlano.Location = new System.Drawing.Point(402, 322);
+            this.tbIDPlano.Location = new System.Drawing.Point(378, 348);
             this.tbIDPlano.Name = "tbIDPlano";
             this.tbIDPlano.Size = new System.Drawing.Size(34, 20);
             this.tbIDPlano.TabIndex = 23;
@@ -269,12 +274,47 @@ namespace Avaliação
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(82, 341);
+            this.label13.Location = new System.Drawing.Point(78, 453);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(43, 16);
             this.label13.TabIndex = 24;
             this.label13.Text = "Voltar";
             this.label13.Click += new System.EventHandler(this.label13_Click);
+            // 
+            // dgvLinhas
+            // 
+            this.dgvLinhas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLinhas.Location = new System.Drawing.Point(418, 62);
+            this.dgvLinhas.Name = "dgvLinhas";
+            this.dgvLinhas.Size = new System.Drawing.Size(352, 120);
+            this.dgvLinhas.TabIndex = 25;
+            this.dgvLinhas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLinhas_CellContentClick);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(501, 22);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(160, 24);
+            this.label14.TabIndex = 26;
+            this.label14.Text = "Tabela de Linhas:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(298, 62);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(55, 13);
+            this.label15.TabIndex = 27;
+            this.label15.Text = "ID Linhas:";
+            // 
+            // tbIDLinhas
+            // 
+            this.tbIDLinhas.Location = new System.Drawing.Point(360, 59);
+            this.tbIDLinhas.Name = "tbIDLinhas";
+            this.tbIDLinhas.Size = new System.Drawing.Size(34, 20);
+            this.tbIDLinhas.TabIndex = 28;
             // 
             // GerenciarPlanos
             // 
@@ -282,6 +322,10 @@ namespace Avaliação
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 494);
+            this.Controls.Add(this.tbIDLinhas);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.dgvLinhas);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.tbIDPlano);
             this.Controls.Add(this.label12);
@@ -313,6 +357,7 @@ namespace Avaliação
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlanos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLinhas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -345,5 +390,9 @@ namespace Avaliação
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox tbIDPlano;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.DataGridView dgvLinhas;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox tbIDLinhas;
     }
 }

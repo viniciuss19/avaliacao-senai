@@ -127,7 +127,7 @@ namespace Avaliação
             conexao.ConnectionString = @"Data Source=DESKTOP-SO3COJV;Initial Catalog=provasenai;Integrated Security=True";
             SqlCommand sql = new SqlCommand();
             sql.Connection = conexao;
-           
+
 
             try
             {
@@ -144,8 +144,8 @@ namespace Avaliação
                 SqlDataAdapter adaptador = new SqlDataAdapter(sql.CommandText, conexao);
                 DataTable tabela = new DataTable();
                 adaptador.Fill(tabela);
-                dgvLinhas.DataSource = tabela;
-                dgvLinhas.ClearSelection();
+                dgvClientes.DataSource = tabela;
+                dgvClientes.ClearSelection();
                 conexao.Close();
             }
 
@@ -185,7 +185,7 @@ namespace Avaliação
             new AdicionarLinhas().Show();
             this.Hide();
         }
-       
+
         public void AtualizarLinha()
         {
             SqlConnection conexao = new SqlConnection();
@@ -199,7 +199,7 @@ namespace Avaliação
                 sql.CommandText = $"SELECT * FROM Linhas";
                 int i = sql.ExecuteNonQuery();
             }
-            catch(Exception exception)
+            catch (Exception exception)
             {
                 MessageBox.Show(exception.ToString());
             }
@@ -216,23 +216,25 @@ namespace Avaliação
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            AtualizarLinha();
+
             SqlConnection conexao = new SqlConnection();
             conexao.ConnectionString = @"Data Source=DESKTOP-SO3COJV;Initial Catalog=provasenai;Integrated Security=True";
             SqlCommand sql = new SqlCommand();
             sql.Connection = conexao;
+            int linhaselecionada = dgvClientes.SelectedCells[0].RowIndex;
+            int IdCliente = (int)dgvClientes.Rows[linhaselecionada].Cells[0].Value;
 
-            DataGridViewRow row = this.dgvLinhas.Rows[e.RowIndex];
-
-            sql.CommandText = $"SELECT * FROM Linhas WHERE '{row.Cells["ID"].Value}' LIKE IDCliente";
+            
             try
             {
                 conexao.Open();
+                string idcliente = tbIDcliente.Text;
+                sql.CommandText = $"SELECT * FROM Linhas WHERE IDCliente = {IdCliente}";
                 int i = sql.ExecuteNonQuery();
             }
             catch (Exception exception)
@@ -248,10 +250,7 @@ namespace Avaliação
                 dgvLinhas.ClearSelection();
                 conexao.Close();
             }
-
-
         }
-
         private void button5_Click(object sender, EventArgs e)
         {
             new GerenciarLinhas().Show();
@@ -263,5 +262,14 @@ namespace Avaliação
             new GerenciarPlanos().Show();
             this.Hide();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
+
+    
+
 }
