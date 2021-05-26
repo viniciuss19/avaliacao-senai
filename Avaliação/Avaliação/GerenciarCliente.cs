@@ -23,8 +23,8 @@ namespace Avaliação
             AtualizarClientes();
         }
 
-                
-        
+
+
         public void AtualizarClientes()
         {
             SqlConnection conexao = new SqlConnection();
@@ -51,7 +51,7 @@ namespace Avaliação
                 conexao.Close();
             }
         }
-       
+
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -62,13 +62,13 @@ namespace Avaliação
         {
             int id = int.Parse(tbID.Text);
             EditarCliente(id);
-            
-             
+
+
         }
 
         private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-             if(e.RowIndex >= 0)
+            if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = this.dgvClientes.Rows[e.RowIndex];
                 tbNome.Text = row.Cells["Nome"].Value.ToString();
@@ -91,7 +91,7 @@ namespace Avaliação
             SqlCommand sql = new SqlCommand();
             sql.Connection = conexao;
 
-           
+
 
             try
             {
@@ -105,9 +105,9 @@ namespace Avaliação
                 sql.Parameters.AddWithValue("@numero", tbNumero.Text);
 
                 sql.Parameters.AddWithValue("@id", id);
-               int i = sql.ExecuteNonQuery();
+                int i = sql.ExecuteNonQuery();
             }
-            catch(Exception exception)
+            catch (Exception exception)
             {
                 MessageBox.Show(exception.ToString());
             }
@@ -123,7 +123,7 @@ namespace Avaliação
                 tbID.Clear();
                 tbNumero.Clear();
 
-                
+
             }
         }
 
@@ -137,5 +137,31 @@ namespace Avaliação
             new MenuPrincipal().Show();
             this.Hide();
         }
-    }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            RemoverCliente();
+            AtualizarClientes();
+        }
+        public void RemoverCliente()
+        {
+            SqlConnection conexao = new SqlConnection();
+            conexao.ConnectionString = @"Data Source=DESKTOP-SO3COJV;Initial Catalog=provasenai;Integrated Security=True";
+            SqlCommand sql = new SqlCommand();
+            sql.Connection = conexao;
+            try
+            {
+                conexao.Open();
+                sql.CommandText = "DELETE FROM Clientes WHERE Nome = '" + tbNome.Text + " ' AND ID = '" + tbID.Text + "'";
+                int i = sql.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+            finally
+            {
+                MessageBox.Show($"O Cliente {tbNome.Text} foi removido com sucesso");
+            }
+        } }
 }

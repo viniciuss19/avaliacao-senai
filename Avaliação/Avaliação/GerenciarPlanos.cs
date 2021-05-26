@@ -11,28 +11,17 @@ using System.Data.SqlClient;
 
 namespace Avaliação
 {
-    public partial class AdicionarLinhas : Form
+    public partial class GerenciarPlanos : Form
     {
-        public AdicionarLinhas()
+        public GerenciarPlanos()
         {
             InitializeComponent();
         }
 
-        private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void GerenciarPlanos_Load(object sender, EventArgs e)
         {
-            SqlConnection conexao = new SqlConnection();
-            conexao.ConnectionString = @"Data Source=DESKTOP-SO3COJV;Initial Catalog=provasenai;Integrated Security=True";
-            SqlCommand sql = new SqlCommand();
-            sql.Connection = conexao;
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = this.dgvClientes.Rows[e.RowIndex];
-                tbNome.Text = row.Cells["Nome"].Value.ToString();
-                tbNúmero.Text = row.Cells["Telefone"].Value.ToString();
-                tbCPF.Text = row.Cells["CPF"].Value.ToString();
-                tbID.Text = row.Cells["ID"].Value.ToString();
-            }
-
+            AtualizarClientes();
+            AtualizarPlanos();
         }
         public void AtualizarClientes()
         {
@@ -59,6 +48,7 @@ namespace Avaliação
                 dgvClientes.ClearSelection();
                 conexao.Close();
             }
+
         }
         public void AtualizarPlanos()
         {
@@ -86,13 +76,37 @@ namespace Avaliação
                 conexao.Close();
             }
         }
-        private void AdicionarLinhas_Load(object sender, EventArgs e)
+
+        private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            AtualizarClientes();
-            AtualizarPlanos();
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dgvClientes.Rows[e.RowIndex];
+
+                tbIDCliente.Text = row.Cells["ID"].Value.ToString();
+                tbCPF.Text = row.Cells["CPF"].Value.ToString();
+                tbTelefone.Text = row.Cells["Telefone"].Value.ToString();
+                tbNomeCliente.Text = row.Cells["Nome"].Value.ToString();
+
+                
+            }
         }
 
-        private void BtnInserir_Click(object sender, EventArgs e)
+        private void dgvPlanos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = this.dgvPlanos.Rows[e.RowIndex];
+
+            tbNomePlano.Text = row.Cells["Nome_Plano"].Value.ToString();
+            tbIDPlano.Text = row.Cells["ID"].Value.ToString();
+            tbFranquia.Text = row.Cells["Franquia"].Value.ToString();
+            tbMensalidade.Text = row.Cells["Mensalidade"].Value.ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ModificarPlanoCliente();
+        }
+        public void ModificarPlanoCliente()
         {
             SqlConnection conexao = new SqlConnection();
             conexao.ConnectionString = @"Data Source=DESKTOP-SO3COJV;Initial Catalog=provasenai;Integrated Security=True";
@@ -102,43 +116,30 @@ namespace Avaliação
             try
             {
                 conexao.Open();
-                sql.CommandText = $"INSERT INTO Linhas(IDCliente,IDPlano,Número,DATAC,Ativo) VALUES (@idcliente,@idplano,@número,@datac,@ativo)";
-                sql.Parameters.AddWithValue("@idcliente", tbID.Text);
+               sql.CommandText = $"UPDATE Linhas SET IDPlano = @idplano WHERE IDCliente = @idcliente";
                 sql.Parameters.AddWithValue("@idplano", tbIDPlano.Text);
-                sql.Parameters.AddWithValue("@número", tbNúmero.Text);
-                sql.Parameters.AddWithValue("@datac", DateTime.Now);
-                sql.Parameters.AddWithValue("@ativo", "Ativo");
-
+                sql.Parameters.AddWithValue("@idcliente", tbIDCliente.Text);
                 int i = sql.ExecuteNonQuery();
             }
-            catch(Exception exception)
+            catch(Exception e)
             {
-                MessageBox.Show(exception.ToString());
+                MessageBox.Show(e.ToString());
             }
             finally
             {
-                MessageBox.Show("A linha foi adicionada com sucesso ROUF ROUF ");
+                MessageBox.Show($"O plano do cliente foi alterado para o plano com o ID {tbIDPlano.Text}");
                 conexao.Close();
+                tbCPF.Clear();
+                tbFranquia.Clear();
+                tbNomeCliente.Clear();
+                tbIDCliente.Clear();
+                tbIDPlano.Clear();
+                tbTelefone.Clear();
+                tbMensalidade.Clear();
             }
         }
 
-        private void dgvPlanos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-            if(e.RowIndex > 0)
-            {
-                DataGridViewRow row = this.dgvPlanos.Rows[e.RowIndex];
-                tbIDPlano.Text = row.Cells["ID"].Value.ToString();
-                tbNomePlano.Text = row.Cells["Nome_Plano"].Value.ToString();
-                tbConteudoIlimitado.Text = row.Cells["CI"].Value.ToString();
-                tbFranquia.Text = row.Cells["Franquia"].Value.ToString();
-                tbMensalidade.Text = row.Cells["Mensalidade"].Value.ToString();
-                
-            }
-           
-        }
-
-        private void label12_Click(object sender, EventArgs e)
+        private void label13_Click(object sender, EventArgs e)
         {
             new MenuPrincipal().Show();
             this.Hide();

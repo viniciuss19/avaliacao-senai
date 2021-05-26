@@ -67,7 +67,7 @@ namespace Avaliação
             {
                 conexao.Open();
                 sql.CommandText = $"UPDATE Linhas SET Ativo = @ativo WHERE ID = @id";
-                sql.Parameters.AddWithValue("@ativo", "Sim");
+                sql.Parameters.AddWithValue("@ativo", "Ativo");
                 sql.Parameters.AddWithValue("@id", tbIDLinha.Text);
                 int i = sql.ExecuteNonQuery();
             }
@@ -95,7 +95,7 @@ namespace Avaliação
             {
                 conexao.Open();
                 sql.CommandText =  $"UPDATE Linhas SET Ativo = @ativo WHERE ID = @id";
-                sql.Parameters.AddWithValue("@ativo", "Não");
+                sql.Parameters.AddWithValue("@ativo", "Inativo");
                 sql.Parameters.AddWithValue("@id", tbIDLinha.Text);
 
                 int i = sql.ExecuteNonQuery();
@@ -107,7 +107,7 @@ namespace Avaliação
             finally
             {
                
-                MessageBox.Show($"A Linha do id {tbIDLinha.Text} foi editada com sucesso ROUF ROOOUUFF");
+                MessageBox.Show($"A Linha com o id {tbIDLinha.Text} foi editada com sucesso ROUF ROOOUUFF");
                 AtualizarLinhas();
                 tbIDLinha.Clear();
                 tbAtivoLinha.Clear();
@@ -118,7 +118,7 @@ namespace Avaliação
 
         private void dgvLinhasGerenciar_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex > 0)
+            if(e.RowIndex >= 0)
             {
                 DataGridViewRow row = this.dgvLinhasGerenciar.Rows[e.RowIndex];
 
@@ -134,6 +134,47 @@ namespace Avaliação
         {
             int id = int.Parse(tbIDLinha.Text);
             DesativarLinha(id);
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            new MenuPrincipal().Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            PesquisarIDCliente();
+        }
+        public void PesquisarIDCliente()
+        {
+            SqlConnection conexao = new SqlConnection();
+            SqlCommand sql = new SqlCommand();
+            conexao.ConnectionString = @"Data Source=DESKTOP-SO3COJV;Initial Catalog=provasenai;Integrated Security=True";
+            sql.Connection = conexao;
+
+            try
+            {
+                conexao.Open();
+                sql.CommandText = $"Select * FROM Linhas WHERE IDCliente = {tbPesquisarIDC.Text}";
+               
+                int i = sql.ExecuteNonQuery();
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+            finally
+            {
+                SqlDataAdapter adaptador = new SqlDataAdapter(sql.CommandText, conexao);
+                DataTable tabela = new DataTable();
+                adaptador.Fill(tabela);
+                dgvLinhasGerenciar.DataSource = tabela;
+                dgvLinhasGerenciar.ClearSelection();
+
+                conexao.Close();
+                tbPesquisarIDC.Clear();
+            }
         }
     }
 }

@@ -29,7 +29,6 @@ namespace Avaliação
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,19 +48,11 @@ namespace Avaliação
             this.tbRua = new System.Windows.Forms.TextBox();
             this.tbNumero = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Avaliação.Properties.Resources.download;
-            this.pictureBox1.Location = new System.Drawing.Point(239, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(187, 160);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // dgvClientes
             // 
@@ -219,12 +210,32 @@ namespace Avaliação
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(146, 360);
+            this.label10.Location = new System.Drawing.Point(127, 398);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(43, 16);
             this.label10.TabIndex = 23;
             this.label10.Text = "Voltar";
             this.label10.Click += new System.EventHandler(this.label10_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Avaliação.Properties.Resources.download;
+            this.pictureBox1.Location = new System.Drawing.Point(239, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(187, 160);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(149, 341);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(125, 54);
+            this.button1.TabIndex = 24;
+            this.button1.Text = "Remover Cliente";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // GerenciarCliente
             // 
@@ -232,6 +243,7 @@ namespace Avaliação
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.tbNumero);
             this.Controls.Add(this.tbRua);
@@ -255,8 +267,8 @@ namespace Avaliação
             this.Name = "GerenciarCliente";
             this.Text = "GerenciarCliente";
             this.Load += new System.EventHandler(this.GerenciarCliente_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -284,5 +296,6 @@ namespace Avaliação
         private System.Windows.Forms.TextBox tbRua;
         private System.Windows.Forms.TextBox tbNumero;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -132,7 +132,7 @@ namespace Avaliação
             try
             {
                 conexao.Open();
-                sql.CommandText = $"SELECT * FROM Linhas WHERE IDCliente = @idcliente";
+                sql.CommandText = $"SELECT * FROM Clientes WHERE Telefone LIKE   '%{tbTelefonePesquisar.Text}%'";
                 int i = sql.ExecuteNonQuery();
             }
             catch (Exception exception)
@@ -229,7 +229,7 @@ namespace Avaliação
 
             DataGridViewRow row = this.dgvLinhas.Rows[e.RowIndex];
 
-            sql.CommandText = $"SELECT * FROM Linhas WHERE '{row.Cells["ID"].Value}' LIKE IDCliente AND Ativo = 'Sim'";
+            sql.CommandText = $"SELECT * FROM Linhas WHERE '{row.Cells["ID"].Value}' LIKE IDCliente";
             try
             {
                 conexao.Open();
@@ -255,6 +255,13 @@ namespace Avaliação
         private void button5_Click(object sender, EventArgs e)
         {
             new GerenciarLinhas().Show();
+            this.Hide();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            new GerenciarPlanos().Show();
+            this.Hide();
         }
     }
 }

@@ -66,6 +66,12 @@
     <Compile Include="GerenciarLinhas.Designer.cs">
       <DependentUpon>GerenciarLinhas.cs</DependentUpon>
     </Compile>
+    <Compile Include="GerenciarPlanos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GerenciarPlanos.Designer.cs">
+      <DependentUpon>GerenciarPlanos.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GerenciarLinhas.resx">
       <DependentUpon>GerenciarLinhas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GerenciarPlanos.resx">
+      <DependentUpon>GerenciarPlanos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
@@ -140,6 +149,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\foto-3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\O-que-seu-cão-está-pensando.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3-dicas-para-estimular-a-inteligencia-do-seu-cachorro.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

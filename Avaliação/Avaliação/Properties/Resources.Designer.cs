@@ -63,6 +63,16 @@ namespace Avaliação.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _3_dicas_para_estimular_a_inteligencia_do_seu_cachorro {
+            get {
+                object obj = ResourceManager.GetObject("3-dicas-para-estimular-a-inteligencia-do-seu-cachorro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cachorrotelefone {
             get {
                 object obj = ResourceManager.GetObject("cachorrotelefone", resourceCulture);
@@ -106,6 +116,16 @@ namespace Avaliação.Properties {
         internal static System.Drawing.Bitmap img_como_saber_a_idade_de_um_cachorro_21702_paso_0_600 {
             get {
                 object obj = ResourceManager.GetObject("img_como_saber_a_idade_de_um_cachorro_21702_paso_0_600", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap O_que_seu_cão_está_pensando {
+            get {
+                object obj = ResourceManager.GetObject("O-que-seu-cão-está-pensando", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
