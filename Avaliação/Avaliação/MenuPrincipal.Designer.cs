@@ -42,19 +42,20 @@ namespace Avaliação
             this.lbltabela = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.dgvLinhas = new System.Windows.Forms.DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             this.pbPesquisarTelefone = new System.Windows.Forms.PictureBox();
             this.pbPesquisarCPF = new System.Windows.Forms.PictureBox();
             this.pbPesquisarNome = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dgvLinhas = new System.Windows.Forms.DataGridView();
-            this.label6 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLinhas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPesquisarTelefone)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPesquisarCPF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPesquisarNome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLinhas)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -63,7 +64,7 @@ namespace Avaliação
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(36, 234);
+            this.button1.Location = new System.Drawing.Point(36, 247);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(164, 63);
             this.button1.TabIndex = 0;
@@ -176,13 +177,46 @@ namespace Avaliação
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(36, 303);
+            this.button3.Location = new System.Drawing.Point(36, 316);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(164, 62);
             this.button3.TabIndex = 16;
             this.button3.Text = "Gerenciar Clientes";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // dgvLinhas
+            // 
+            this.dgvLinhas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLinhas.Location = new System.Drawing.Point(539, 316);
+            this.dgvLinhas.Name = "dgvLinhas";
+            this.dgvLinhas.Size = new System.Drawing.Size(240, 141);
+            this.dgvLinhas.TabIndex = 17;
+            this.dgvLinhas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(597, 293);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(116, 16);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "Tabela de Linhas:";
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Gainsboro;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.Black;
+            this.button4.Location = new System.Drawing.Point(36, 384);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(164, 62);
+            this.button4.TabIndex = 19;
+            this.button4.Text = "Adicionar Linha";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // pbPesquisarTelefone
             // 
@@ -227,38 +261,19 @@ namespace Avaliação
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // dgvLinhas
+            // button5
             // 
-            this.dgvLinhas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLinhas.Location = new System.Drawing.Point(539, 316);
-            this.dgvLinhas.Name = "dgvLinhas";
-            this.dgvLinhas.Size = new System.Drawing.Size(240, 141);
-            this.dgvLinhas.TabIndex = 17;
-            this.dgvLinhas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(597, 293);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(116, 16);
-            this.label6.TabIndex = 18;
-            this.label6.Text = "Tabela de Linhas:";
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.Gainsboro;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Location = new System.Drawing.Point(36, 371);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(164, 62);
-            this.button4.TabIndex = 19;
-            this.button4.Text = "Adicionar Linha";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button5.BackColor = System.Drawing.Color.Gainsboro;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.Black;
+            this.button5.Location = new System.Drawing.Point(206, 316);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(164, 62);
+            this.button5.TabIndex = 20;
+            this.button5.Text = "Gerenciar Linhas";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // MenuPrincipal
             // 
@@ -266,6 +281,7 @@ namespace Avaliação
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(791, 469);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dgvLinhas);
@@ -291,11 +307,11 @@ namespace Avaliação
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.MenuPrincipal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLinhas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPesquisarTelefone)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPesquisarCPF)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPesquisarNome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLinhas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -323,6 +339,7 @@ namespace Avaliação
         private System.Windows.Forms.DataGridView dgvLinhas;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }
 

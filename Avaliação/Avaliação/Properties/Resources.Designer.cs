@@ -93,6 +93,16 @@ namespace Avaliação.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap foto_3 {
+            get {
+                object obj = ResourceManager.GetObject("foto-3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap img_como_saber_a_idade_de_um_cachorro_21702_paso_0_600 {
             get {
                 object obj = ResourceManager.GetObject("img_como_saber_a_idade_de_um_cachorro_21702_paso_0_600", resourceCulture);

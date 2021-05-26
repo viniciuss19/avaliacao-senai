@@ -66,7 +66,7 @@ namespace Avaliação
             // dgvClientes
             // 
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientes.Location = new System.Drawing.Point(355, 195);
+            this.dgvClientes.Location = new System.Drawing.Point(360, 168);
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.Size = new System.Drawing.Size(407, 200);
             this.dgvClientes.TabIndex = 1;

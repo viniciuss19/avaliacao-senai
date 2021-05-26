@@ -182,7 +182,8 @@ namespace Avaliação
 
         private void button4_Click(object sender, EventArgs e)
         {
-            
+            new AdicionarLinhas().Show();
+            this.Hide();
         }
        
         public void AtualizarLinha()
@@ -249,6 +250,11 @@ namespace Avaliação
             }
 
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            new GerenciarLinhas().Show();
         }
     }
 }
