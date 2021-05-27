@@ -72,7 +72,7 @@ namespace Avaliação
             // dgvPlanos
             // 
             this.dgvPlanos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPlanos.Location = new System.Drawing.Point(407, 279);
+            this.dgvPlanos.Location = new System.Drawing.Point(388, 278);
             this.dgvPlanos.Name = "dgvPlanos";
             this.dgvPlanos.Size = new System.Drawing.Size(319, 138);
             this.dgvPlanos.TabIndex = 2;

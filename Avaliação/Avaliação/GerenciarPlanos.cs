@@ -178,7 +178,7 @@ namespace Avaliação
 
         private void dgvLinhas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex > 0)
+            if(e.RowIndex >= 0)
             {
                 DataGridViewRow row = this.dgvLinhas.Rows[e.RowIndex];
                 tbIDLinhas.Text = row.Cells["ID"].Value.ToString();
